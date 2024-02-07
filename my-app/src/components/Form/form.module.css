@@ -1,0 +1,17 @@
+.form{
+    display: flex;
+    flex-direction: row;
+
+    .form__left_cont{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        .form__name_cont{
+
+        }
+
+    }
+    .form__right_cont{
+
+    }
+}

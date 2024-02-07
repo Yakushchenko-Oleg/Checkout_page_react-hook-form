@@ -1,0 +1,11 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primery-font-collor: #000000;
+  /* --banner-bg: #F3DED7; */
+  --primery-font:  'Poppins', sans-serif;
+}
