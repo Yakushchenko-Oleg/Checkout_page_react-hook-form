@@ -1,17 +1,94 @@
+label{
+    font-family: var(--primery-font);
+    color: var(--primery-font-collor);
+    font-weight: 500;
+    font-size: 16px;
+}
+input,
+select {
+    border: 1px solid var(--primery-grey-collor);
+    border-radius: 10px;
+    height: 75px;
+    margin: 22px 0 36px;
+    
+}
 .form{
     display: flex;
     flex-direction: row;
+    column-gap: 26px;
+
 
     .form__left_cont{
+        width: 608px;
         display: flex;
         flex-direction: column;
-        gap: 10px;
-        .form__name_cont{
+        margin: 63px 0 52px 100px;
+        padding: 35px 75px 70px;
+      
 
+        h2{
+            font-family: var(--primery-font);
+            color: var(--primery-font-color);
+            font-weight: 600;
+            font-size: 54px;
+            line-height: 54px;           
+        }
+
+        .form__name_cont{
+            display: flex;
+            flex-direction: row;
+            column-gap: 30px;
+
+            .form__name_cont{
+                display: flex;
+                flex-direction: column;
+                margin: 36px 0;
+
+                input{
+                    border: 1px solid var(--primery-grey-collor);
+                    border-radius: 10px;
+                    height: 75px;
+                    width: 211px;
+                }
+            }
         }
 
     }
     .form__right_cont{
 
+        width: 608px;
+        display: flex;
+        flex-direction: column;
+        margin-top: 63px;
+        margin-right: 100px;
+        padding: 87px 37px;
+        .form__right__string_wraper{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+
+            .form__right__string_wraper:nth-child(1){
+                margin-bottom: 14px;
+                h3{
+                    font-family: var(--primery-font);
+                    color: var(--primery-font-color);
+                    font-weight: 500;
+                    font-size: 24px;
+                }
+            }
+            .form__right__string_wraper:nth-child(2){
+                margin-bottom: 22px;
+                    h5{
+
+                    } 
+                
+                        
+
+             
+            }
+        }
+
     }
 }
+
+

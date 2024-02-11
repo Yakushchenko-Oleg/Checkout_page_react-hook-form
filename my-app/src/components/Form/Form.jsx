@@ -7,8 +7,8 @@ const Form = () => {
     const checkboxText = 'Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order will not be shipped until the funds have cleared in our account.'
     const radioBtnText = 'Your personal data will be used to support your experience throughout this website, to manage access to your account, and for other purposes described in our privacy policy.' 
     const [countriesList, setCountriesList] = useState({})
-    // useEffect(()=> {
-    // fetchCountries(setCountriesList)})
+    useEffect(()=> {
+    fetchCountries(setCountriesList)})
     const {
         register,
         handleSubmit,
@@ -22,8 +22,7 @@ const Form = () => {
         reset()
       }
 
-      console.log(errors);
-    //   console.log(countriesList[0]);
+    //   console.log(countriesList[3]);
     
   return (
     <form className={styles.form} onSubmit={handleSubmit(checkoutSubmit)}>
@@ -73,7 +72,9 @@ const Form = () => {
                     }
             
             <label htmlFor="country"> Country / Region </label> 
-            <select name="country" id="country">
+            <select name="country" id="country" placeholder="Additional information">
+            <option value='Sri Lanka' disabled>Sri Lanka</option>
+            {/* <option value="" disabled selected>Sri Lanka</option> */}
                 
             {
             //   countriesList && countriesList.map(el => <option value={el.name.common}>{el.name.common} </option>)  
@@ -85,16 +86,15 @@ const Form = () => {
             
             <label htmlFor="city"> Town / City </label> 
             <input id="city" type="text"
-                                    {...register('city',
-                                    {pattern: {
-                                        value: /^([A-Za-z\u00C0-\u00D6\u00D8-\u00f6\u00f8-\u00ff\s]*)$/g,
-                                        message: "Use only Latin characters",},
-                                })}/>
-                                {
-                                    errors.city && errors.city.message && <p style={{ color: 'red' }}>{errors.city.message}</p> 
-                                } 
+                {...register('city',
+                    {pattern: {
+                        value: /^([A-Za-z\u00C0-\u00D6\u00D8-\u00f6\u00f8-\u00ff\s]*)$/g,
+                        message: "Use only Latin characters",},
+                    })}/>
+            {
+                errors.city && errors.city.message && <p style={{ color: 'red' }}>{errors.city.message}</p> 
+            } 
         
-{/*  */}
             <label htmlFor="ZIPcode"> ZIP code </label> 
             <input id="ZIPcode" type="number"                                    
                 {...register('ZIPcode',
@@ -138,10 +138,10 @@ const Form = () => {
         <div className={styles.form__right_cont}>
             <div className={styles.form__right__string_wraper}>
                 <h3>Product</h3>
-                <h3>Subtotal</h3>
+                <h3>Subtotal</h3> 
             </div>
             <div className={styles.form__right__string_wraper}>
-                <h5>Asgaard sofa x 1</h5>
+                <h5>Asgaard sofa <span></span> x 1</h5>
                 <h5>Rs. 250,000.00</h5>
 
             </div>
